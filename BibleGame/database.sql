@@ -1,0 +1,13 @@
+-- TABLE
+CREATE TABLE visitors IF NOT EXISTS(
+  ID INTEGER PRIMARY KEY, 
+  ip_address varchar(20), 
+  time_stamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+ 
+-- INDEX
+ 
+-- TRIGGER
+ 
+-- VIEW
+ 
