@@ -87,19 +87,21 @@ $conn = new mysqli($servername, $username, $password, 'BibleDatabase');
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+	echo "<script>console.log(\"Connection failed: " . $conn->connect_error . "\");</script>";
 } 
-echo "Connected successfully";
+echo "<script>console.log(\"Connected successfully\");</script>";
 
-$sql = "CREATE TABLE IF NOT EXISTS visitors (id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,ip_address VARCHAR(30),timestamp DATETIME)";
+$sql = "INSERT INTO visitors (ip_address) VALUES (" . $_SERVER['REMOTE_ADDR'] . ")";
 if ($conn->query($sql) === TRUE)
 {
-    echo "Table visitors created successfully";
+    echo "<script>console.log(\"Successfully logged new ip address: \"" . $_SERVER['REMOTE_ADDR'] . ");</script>";
 }
 else
 {
-    echo "Error creating table: " . $conn->error;
+    echo "<script>console.log(\"Error creating table: " . $conn->error . ");</script>";
 }
 $conn->close();
+echo "<script>console.log(\"Database closed\");</script>";
 ?>
      
 </body>
