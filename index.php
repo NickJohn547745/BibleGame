@@ -90,7 +90,7 @@ if ($conn->connect_error) {
 	echo "<script>console.log(\"Connection failed: " . $conn->connect_error . "\");</script>";
 } 
 echo "<script>console.log(\"Connected successfully\");</script>";
-
+echo $_SERVER['REMOTE_ADDR'];
 $sql = "INSERT INTO visitors (ip_address) VALUES (" . $_SERVER['REMOTE_ADDR'] . ")";
 if ($conn->query($sql) === TRUE)
 {
