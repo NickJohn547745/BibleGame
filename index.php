@@ -89,17 +89,18 @@ if ($conn->connect_error) {
 	echo "<script>console.log(\"Connection failed: " . $conn->connect_error . "\");</script>";
 } 
 echo "<script>console.log(\"Connected successfully\");</script>";
-echo "<script>console.log(\"" . $ip . "\");</script>";
 
-$sql = "INSERT INTO visitors (ip_address) VALUES (\"" . $ip . "\")";
-if ($conn->query($sql) === TRUE)
-{
-    echo "<script>console.log(\"Successfully logged new ip address: " . $ip . "\");</script>";
+$whitelisted_ips = $conn->query("SELECT id FROM ipwhitelist WHERE ip = \'" . $ip . "\'");
+if ($whitelisted_ips->num_rows != 0) {
+	$sql = "INSERT INTO visitors (ip_address) VALUES (\"" . $ip . "\")";
+	if ($conn->query($sql) === TRUE)
+		echo "<script>console.log(\"Successfully logged new ip address: " . $ip . "\");</script>";
+	else
+		echo "<script>console.log(\"Error creating table: " . $conn->error . "\");</script>";
 }
 else
-{
-    echo "<script>console.log(\"Error creating table: " . $conn->error . "\");</script>";
-}
+	echo "<script>console.log(\"Ip on the whitelist\");</script>";
+
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
 ?>
