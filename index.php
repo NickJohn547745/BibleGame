@@ -89,6 +89,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
+$sql = "CREATE TABLE IF NOT EXISTS visitors (id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,ip_address VARCHAR(30),timestamp DATETIME";
+if ($conn->query($sql) === TRUE)
+{
+    echo "Table visitors created successfully";
+}
+else
+{
+    echo "Error creating table: " . $conn->error;
+}
+$conn->close();
 ?>
      
 </body>
