@@ -5,14 +5,14 @@
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "ca-pub-3833290146425998",
-    enable_page_level_ads: true
+    enable_page_level_ads: truerawgit
   });
 </script>-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://raw.githubusercontent.com/NickJohn547745/NickJohn547745.github.io/master/main.js"></script>
+<script src="https://rawgit.com/NickJohn547745/NickJohn547745.github.io/master/BibleGame/js/main.js"></script>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/NickJohn547745/NickJohn547745.github.io/master/BibleGame/css/style.css">
 </head>
 
 <body onload="windowLoaded()">
@@ -78,7 +78,7 @@
 <h1 id="_testament_feedback" style="display:none" align="center"></h1>
 
 <?php
-if ($db = sqlite_open('https://raw.githubusercontent.com/NickJohn547745/NickJohn547745.github.io/master/database.sql', 0666, $sqliteerror)) { 
+if ($db = sqlite_open('https://rawgit.com/NickJohn547745/NickJohn547745.github.io/master/database.sql', 0666, $sqliteerror)) { 
     sqlite_query($db, 'CREATE TABLE foo (bar varchar(10))');
     sqlite_query($db, "INSERT INTO foo VALUES ('fnord')");
     $result = sqlite_query($db, 'select bar from foo');
