@@ -89,7 +89,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
-$sql = "USE BibleDatabase;CREATE TABLE IF NOT EXISTS visitors (id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,ip_address VARCHAR(30),timestamp DATETIME";
+mysql_select_db('BibleDatabase');
+
+$sql = "CREATE TABLE IF NOT EXISTS visitors (id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,ip_address VARCHAR(30),timestamp DATETIME";
 if ($conn->query($sql) === TRUE)
 {
     echo "Table visitors created successfully";
