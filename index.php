@@ -93,15 +93,18 @@ echo "<script>console.log(\"Connected successfully\");</script>";
 $whitelisted_ips = $conn->query("SELECT id FROM ipwhitelist WHERE ip = \'" . $ip . "\'");
 if ($whitelisted_ips->num_rows != 0) {
 	$sql = "INSERT INTO visitors (ip_address) VALUES (\"" . $ip . "\")";
-	if ($conn->query($sql) === TRUE)
+	if ($conn->query($sql) === TRUE) {
 		echo "<script>console.log(\"Successfully logged new ip address: " . $ip . "\");</script>";
-	else
+	}
+	else {
 		echo "<script>console.log(\"Error creating table: " . $conn->error . "\");</script>";
+	}
 }
-else
+else {
 	echo "<script>console.log(\"Ip on the whitelist\");</script>";
+}
 
-echo $conn->query("SELECT id FROM visitors").num_rows . " total visitors.";
+echo mysql_num_rows($conn->query("SELECT id FROM visitors"));
 
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
