@@ -35,6 +35,10 @@
 <div id="main_menu" class="tabcontent">
   <h3>Home</h3>
   <p id="test">This website serves a purpose as a game/study tool that can be used to recite the different verses of the bible. It currently comes stock with four different modes: Whole Bible, Old Testament, New Testament, and a Hard Mode.</p>
+	<br />
+	  <h3>Stats</h3>
+  <p id="stats"></p>
+
 </div>
 
 <div id="all_testament" class="tabcontent">
@@ -104,7 +108,7 @@ else {
 	echo "<script>console.log(\"Ip on the whitelist\");</script>";
 }
 
-echo $conn->query("SELECT * FROM visitors")->num_rows;
+echo "<script>document.getElementById(\"stats\").innerHTML = \"" . $conn->query("SELECT * FROM visitors")->num_rows . "\";</script>";
 	
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
