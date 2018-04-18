@@ -78,12 +78,18 @@
 <h1 id="_testament_feedback" style="display:none" align="center"></h1>
 
 <?php
-if ($db = sqlite_open('https://raw.githubusercontent.com/NickJohn547745/NickJohn547745.github.io/master/BibleGame/sql/database.sql', 0666, $sqliteerror)) { 
-    $result = sqlite_query($db, 'SELECT * FROM visitors');
-    echo sqlite_fetch_array($result);
-} else {
-    die($sqliteerror);
-}
+$servername = "den1.mssql3.gear.host";
+$username = "bibledatabase";
+$password = "Ff78~a?ebfPV";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
 ?>
      
 </body>
