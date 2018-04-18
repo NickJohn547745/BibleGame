@@ -9,9 +9,9 @@
 </script>-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://rawgit.com/NickJohn547745/NickJohn547745.github.io/master/BibleGame/js/main.js"></script>
+<script src="https://rawgit.com/NickJohn547745/bibleGame/master/js/main.js"></script>
 
-<link rel="stylesheet" type="text/css" href="https://rawgit.com/NickJohn547745/NickJohn547745.github.io/master/BibleGame/css/style.css">
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/NickJohn547745/bibleGame/master/css/style.css">
 </head>
 
 <body onload="windowLoaded()">

@@ -24,7 +24,7 @@ function getJSONP(url, success) {
 };
 
 function windowLoaded() {
-	fetch('https://rawgit.com/NickJohn547745/NickJohn547745.github.io/master/BibleGame/xml/nsrv.xml')
+	fetch('https://rawgit.com/NickJohn547745/bibleGame/master/xml/nsrv.xml')
 	.then(function(response) {
 		return response.text();
 	})
