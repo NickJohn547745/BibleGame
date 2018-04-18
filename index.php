@@ -94,7 +94,7 @@ echo "<script>console.log(\"" . $ip . "\");</script>";
 $sql = "INSERT INTO visitors (ip_address) VALUES (\"" . $ip . "\")";
 if ($conn->query($sql) === TRUE)
 {
-    echo "<script>console.log(\"Successfully logged new ip address: \"" . $ip . "\");</script>";
+    echo "<script>console.log(\"Successfully logged new ip address: " . $ip . ");</script>";
 }
 else
 {
