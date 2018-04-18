@@ -22,10 +22,9 @@ function getJSONP(url, success) {
     head.appendChild(script);
 
 };
-//file:///C:/Users/Nicholas/Desktop/GitHub/NickJohn547745.github.io/BibleGame/nsrv.xml
 
 function windowLoaded() {
-	fetch('https://raw.githubusercontent.com/NickJohn547745/NickJohn547745.github.io/master/BibleGame/nsrv.xml')
+	fetch('https://rawgit.com/NickJohn547745/NickJohn547745.github.io/master/BibleGame/xml/nsrv.xml')
 	.then(function(response) {
 		return response.text();
 	})
