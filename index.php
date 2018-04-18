@@ -101,8 +101,11 @@ if ($whitelisted_ips->num_rows != 0) {
 else
 	echo "<script>console.log(\"Ip on the whitelist\");</script>";
 
+echo $conn->query("SELECT id FROM visitors").num_rows . " total visitors.";
+
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
+
 ?>
      
 </body>
