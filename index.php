@@ -82,14 +82,13 @@ $username = "bibledatabase";
 $password = "Se9v0vy9!_tN";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, 'BibleDatabase');
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
-mysql_select_db('BibleDatabase');
 
 $sql = "CREATE TABLE IF NOT EXISTS visitors (id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,ip_address VARCHAR(30),timestamp DATETIME";
 if ($conn->query($sql) === TRUE)
