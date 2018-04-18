@@ -108,7 +108,7 @@ else {
 	echo "<script>console.log(\"Ip on the whitelist\");</script>";
 }
 
-echo "<script>document.getElementById(\"stats\").innerHTML = \"" . $conn->query("SELECT * FROM visitors")->num_rows . "\";</script>";
+echo "<script>document.getElementById(\"stats\").innerHTML = \"Total visitors: " . $conn->query("SELECT * FROM visitors")->num_rows . "\";</script>";
 	
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
