@@ -81,17 +81,17 @@ $servername = "den1.mysql2.gear.host";
 $username = "bibledatabase";
 $password = "Se9v0vy9!_tN";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, 'BibleDatabase');
 $ip = $_SERVER['REMOTE_ADDR'];
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 	echo "<script>console.log(\"Connection failed: " . $conn->connect_error . "\");</script>";
 } 
 echo "<script>console.log(\"Connected successfully\");</script>";
 echo "<script>console.log(\"" . $ip . "\");</script>";
-$sql = "INSERT INTO visitors (ip_address) VALUES (" . $ip . ")";
+
+$sql = "INSERT INTO visitors (ip_address) VALUES (\"" . $ip . "\")";
 if ($conn->query($sql) === TRUE)
 {
     echo "<script>console.log(\"Successfully logged new ip address: \"" . $ip . "\");</script>";
