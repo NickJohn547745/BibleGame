@@ -104,10 +104,10 @@ else {
 	echo "<script>console.log(\"Ip on the whitelist\");</script>";
 }
 
-$sql = "SELECT * FROM visitors";
+$sql = "SELECT COUNT(*) FROM visitors";
 $countQuery = $conn->query($sql);
 	if ($countQuery === TRUE) {
-		echo "<script>console.log(\"Total visitors: " . mysql_num_rows($countQuery) . "\");</script>";
+		echo "<script>console.log(\"Total visitors: " . $countQuery . "\");</script>";
 	}
 	else {
 		echo "<script>console.log(\"Error getting value: " . $conn->error . "\");</script>";
