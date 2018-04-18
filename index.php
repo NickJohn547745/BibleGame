@@ -104,7 +104,14 @@ else {
 	echo "<script>console.log(\"Ip on the whitelist\");</script>";
 }
 
-echo mysql_num_rows($conn->query("SELECT id FROM visitors"));
+$sql = "SELECT * FROM visitors";
+$countQuery = $conn->query($sql);
+	if ($countQuery === TRUE) {
+		echo "<script>console.log(\"Total visitors: " . mysql_num_rows($countQuery) . "\");</script>";
+	}
+	else {
+		echo "<script>console.log(\"Error getting value: " . $conn->error . "\");</script>";
+	}
 
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
