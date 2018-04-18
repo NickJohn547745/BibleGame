@@ -104,8 +104,7 @@ else {
 	echo "<script>console.log(\"Ip on the whitelist\");</script>";
 }
 
-$countQuery = $conn->query("SELECT COUNT(*) FROM visitors");
-echo "<script>console.log(\"Total visitors: " . $countQuery . "\");</script>";
+echo $conn->query("SELECT COUNT(*) FROM visitors");
 	
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
