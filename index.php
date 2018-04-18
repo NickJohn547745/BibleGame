@@ -94,11 +94,11 @@ echo "<script>console.log(\"" . $ip . "\");</script>";
 $sql = "INSERT INTO visitors (ip_address) VALUES (" . $ip . ")";
 if ($conn->query($sql) === TRUE)
 {
-    echo "<script>console.log(\"Successfully logged new ip address: \"" . $ip . ");</script>";
+    echo "<script>console.log(\"Successfully logged new ip address: \"" . $ip . "\");</script>";
 }
 else
 {
-    echo "<script>console.log(\"Error creating table: " . $conn->error . ");</script>";
+    echo "<script>console.log(\"Error creating table: " . $conn->error . "\");</script>";
 }
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
