@@ -77,19 +77,9 @@
 <h1 id="_testament_feedback" style="display:none" align="center"></h1>
 
 <?php
-$servername = "den1.mssql3.gear.host";
-$username = "bibledatabase";
-$password = "Ff78~a?ebfPV";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-?>
+ 		// Show all information, defaults to INFO_ALL
+ 		phpinfo();
+ 	?>
      
 </body>
 </html> 
