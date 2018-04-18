@@ -28,8 +28,9 @@
   <button class="tablinks old_testament" onclick="tabClicked(event, 'old_testament')">Old Testament Mode</button>
   <button class="tablinks new_testament" onclick="tabClicked(event, 'new_testament')">New Testament Mode</button>
   <button class="tablinks hard_mode" onclick="tabClicked(event, 'hard_mode')">Hard Mode</button>
-  <b><p id="lifeboard" style="display:none;float:right; margin-right: 25px;">Lives Left:</p></b>
-  <b><p id="scoreBoard" style="display:none;float:right; margin-right: 25px;">Current Score:</p></b>
+  <div style="margin: 7px 25px auto; float: right; display: table;">
+  <b><span id="lifeboard" style="display:none">Lives Left:</span><span id="scoreBoard" style="display:none">Current Score:</span></b>
+</div>
 </div>
 
 <div id="main_menu" class="tabcontent">
