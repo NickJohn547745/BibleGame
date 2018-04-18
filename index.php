@@ -95,7 +95,7 @@ if ($conn->connect_error) {
 echo "<script>console.log(\"Connected successfully\");</script>";
 
 $whitelisted_ips = $conn->query("SELECT id FROM ipwhitelist WHERE ip = \'" . $ip . "\'");
-if ($whitelisted_ips->num_rows !== 0) {
+if ($whitelisted_ips->num_rows === 0) {
 	$sql = "INSERT INTO visitors (ip_address) VALUES (\"" . $ip . "\")";
 	if ($conn->query($sql) === TRUE) {
 		echo "<script>console.log(\"Successfully logged new ip address: " . $ip . "\");</script>";
