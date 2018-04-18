@@ -113,6 +113,8 @@ $countQuery = $conn->query($sql);
 		echo "<script>console.log(\"Error getting value: " . $conn->error . "\");</script>";
 	}
 
+echo $countQuery;
+	
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
 
