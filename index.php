@@ -104,16 +104,8 @@ else {
 	echo "<script>console.log(\"Ip on the whitelist\");</script>";
 }
 
-$sql = "SELECT COUNT(*) FROM visitors";
-$countQuery = $conn->query($sql);
-	if ($countQuery === TRUE) {
-		echo "<script>console.log(\"Total visitors: " . $countQuery . "\");</script>";
-	}
-	else {
-		echo "<script>console.log(\"Error getting value: " . $conn->error . "\");</script>";
-	}
-
-echo $countQuery;
+$countQuery = $conn->query("SELECT COUNT(*) FROM visitors");
+echo "<script>console.log(\"Total visitors: " . $countQuery . "\");</script>";
 	
 $conn->close();
 echo "<script>console.log(\"Database closed\");</script>";
