@@ -22,6 +22,8 @@
 <p hidden id="_testament_chapter_number"></p>
 <p hidden id="_testament_book"></p>
   
+	<h4 style="text-align: center; width: 100%">URL is changing to: http://biblegame.gearhostpreview.com/</h4>
+	
 <div class="tab">
   <button class="tablinks main_menu" id="default_active" onclick="tabClicked(event, 'main_menu')">Home</button>
   <button class="tablinks whole_bible" onclick="tabClicked(event, 'all_testament')">Whole Bible Mode</button>
